@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:h2:mem:orderdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# In EKS, k8s Service DNS resolves "product-service" to the right pod IPs.
+# Override locally with: -Dproduct.service.url=http://localhost:8081
+product:
+  service:
+    url: ${PRODUCT_SERVICE_URL:http://product-service:8081}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
