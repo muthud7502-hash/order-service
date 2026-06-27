@@ -1,12 +1,12 @@
 pipeline {
     agent {
-        label 'slave'
+        label 'slave_group'
     }
 
     environment {
         DOCKER_IMAGE = "muthu2699/order-service"
-        SONAR_URL = "http://YOUR_SLAVE_PRIVATE_IP:9000"
-        NEXUS_URL = "http://YOUR_SLAVE_PRIVATE_IP:8081"
+        SONAR_URL = "http://54.202.65.117:9000"
+        NEXUS_URL = "http://54.202.65.117:8081"
         GIT_REPO = "https://github.com/muthud7502-hash/order-service.git"
         GITOPS_REPO = "https://github.com/muthud7502-hash/gitops-repo.git"
     }
