@@ -5,8 +5,8 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "muthu2699/order-service"
-        SONAR_URL = "http://16.144.21.0:9000"
-        NEXUS_URL = "http://16.144.21.0:8081"
+        SONAR_URL = "http://35.88.39.185:9000"
+        NEXUS_URL = "http://35.88.39.185:8081"
         GIT_REPO = "https://github.com/muthud7502-hash/order-service.git"
         GITOPS_REPO = "https://github.com/muthud7502-hash/gitops-repo.git"
     }
